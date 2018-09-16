@@ -1,0 +1,18 @@
+<input type="text" class="form-control" [(ngModel)]="serverName">
+<button class='btn btn-primary' [disabled]="allowSever"
+ (click)="onCreateServer()">Add Data</button>
+ <!--p>{{serverCreationStatus}}</p-->
+ <p *ngIf = "serverCreated; else noServer">Server created with name: {{serverName}}</p>
+ <ng-template #noServer>
+    <p>No server created</p>
+ </ng-template>
+ <!--input type="text" class="form-control" (input)="onUpdateServerName($event)"-->
+
+ <!--p>{{serverName}}</p-->
+ <!--Assignment 2  tasks-->
+ <input type="text" class="form-control" [(ngModel)]="userName">
+ <p>{{userName}}</p>
+ <button class="btn btn-primary"[disabled]="userName===''" 
+ (click)="addUserName()">Reset Username</button>
+<app-server *ngFor="let server of servers"></app-server>
+<!-- <app-server></app-server> -->
